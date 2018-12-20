@@ -43,118 +43,118 @@ public class SlonieTest {
 			e.printStackTrace();
 		}
 	}
-//
-//	@Test
-//	public void slo1ocen() {
-//		String fileName = "slo1ocen";
-//		try {
-//			List<String> in = Files.readAllLines(Paths.get("src/main/java/finbarre/slonie/dane/" + fileName + ".in"));
-//			long out = Long.valueOf(
-//					Files.readAllLines(Paths.get("src/main/java/finbarre/slonie/dane/" + fileName + ".out")).get(0));
-//			Slonie slonie = new Slonie();
-//			long wynik = slonie.policz(in);
-//			assertThat(wynik).isEqualTo(out);
-//
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-//	}
-//
-//	@Test
-//	public void slo2() {
-//		String fileName = "slo2";
-//		try {
-//			List<String> in = Files.readAllLines(Paths.get("src/main/java/finbarre/slonie/dane/" + fileName + ".in"));
-//			long out = Long.valueOf(
-//					Files.readAllLines(Paths.get("src/main/java/finbarre/slonie/dane/" + fileName + ".out")).get(0));
-//			Slonie slonie = new Slonie();
-//			long wynik = slonie.policz(in);
-//			assertThat(wynik).isEqualTo(out);
-//
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-//	}
-//
-//	@Test
-//	public void slo2ocen() {
-//		String fileName = "slo2ocen";
-//		try {
-//			List<String> in = Files.readAllLines(Paths.get("src/main/java/finbarre/slonie/dane/" + fileName + ".in"));
-//			long out = Long.valueOf(
-//					Files.readAllLines(Paths.get("src/main/java/finbarre/slonie/dane/" + fileName + ".out")).get(0));
-//			Slonie slonie = new Slonie();
-//			long wynik = slonie.policz(in);
-//			assertThat(wynik).isEqualTo(out);
-//
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-//	}
-//
-//	@Test
-//	public void slo3() {
-//		String fileName = "slo3";
-//		try {
-//			List<String> in = Files.readAllLines(Paths.get("src/main/java/finbarre/slonie/dane/" + fileName + ".in"));
-//			long out = Long.valueOf(
-//					Files.readAllLines(Paths.get("src/main/java/finbarre/slonie/dane/" + fileName + ".out")).get(0));
-//			Slonie slonie = new Slonie();
-//			long wynik = slonie.policz(in);
-//			assertThat(wynik).isEqualTo(out);
-//
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-//	}
-//
-//	@Test
-//	public void slo3ocen() {
-//		String fileName = "slo3ocen";
-//		try {
-//			List<String> in = Files.readAllLines(Paths.get("src/main/java/finbarre/slonie/dane/" + fileName + ".in"));
-//			long out = Long.valueOf(
-//					Files.readAllLines(Paths.get("src/main/java/finbarre/slonie/dane/" + fileName + ".out")).get(0));
-//			Slonie slonie = new Slonie();
-//			long wynik = slonie.policz(in);
-//			assertThat(wynik).isEqualTo(out);
-//
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-//	}
-//
-//	@Test
-//	public void slo4() {
-//		String fileName = "slo4";
-//		try {
-//			List<String> in = Files.readAllLines(Paths.get("src/main/java/finbarre/slonie/dane/" + fileName + ".in"));
-//			long out = Long.valueOf(
-//					Files.readAllLines(Paths.get("src/main/java/finbarre/slonie/dane/" + fileName + ".out")).get(0));
-//			Slonie slonie = new Slonie();
-//			long wynik = slonie.policz(in);
-//			assertThat(wynik).isEqualTo(out);
-//
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-//	}
-//
-//	@Test
-//	public void slo4ocen() {
-//		String fileName = "slo4ocen";
-//		try {
-//			List<String> in = Files.readAllLines(Paths.get("src/main/java/finbarre/slonie/dane/" + fileName + ".in"));
-//			long out = Long.valueOf(
-//					Files.readAllLines(Paths.get("src/main/java/finbarre/slonie/dane/" + fileName + ".out")).get(0));
-//			Slonie slonie = new Slonie();
-//			long wynik = slonie.policz(in);
-//			assertThat(wynik).isEqualTo(out);
-//
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-//	}
+
+	@Test
+	public void slo1ocen() {
+		String fileName = "slo1ocen";
+		try {
+			List<String> in = Files.readAllLines(Paths.get("src/main/java/finbarre/slonie/dane/" + fileName + ".in"));
+			long out = Long.valueOf(
+					Files.readAllLines(Paths.get("src/main/java/finbarre/slonie/dane/" + fileName + ".out")).get(0));
+			Slonie slonie = new Slonie();
+			long wynik = slonie.policz(in);
+			assertThat(wynik).isEqualTo(out);
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Test
+	public void slo2() {
+		String fileName = "slo2";
+		try {
+			List<String> in = Files.readAllLines(Paths.get("src/main/java/finbarre/slonie/dane/" + fileName + ".in"));
+			long out = Long.valueOf(
+					Files.readAllLines(Paths.get("src/main/java/finbarre/slonie/dane/" + fileName + ".out")).get(0));
+			Slonie slonie = new Slonie();
+			long wynik = slonie.policz(in);
+			assertThat(wynik).isEqualTo(out);
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Test
+	public void slo2ocen() {
+		String fileName = "slo2ocen";
+		try {
+			List<String> in = Files.readAllLines(Paths.get("src/main/java/finbarre/slonie/dane/" + fileName + ".in"));
+			long out = Long.valueOf(
+					Files.readAllLines(Paths.get("src/main/java/finbarre/slonie/dane/" + fileName + ".out")).get(0));
+			Slonie slonie = new Slonie();
+			long wynik = slonie.policz(in);
+			assertThat(wynik).isEqualTo(out);
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Test
+	public void slo3() {
+		String fileName = "slo3";
+		try {
+			List<String> in = Files.readAllLines(Paths.get("src/main/java/finbarre/slonie/dane/" + fileName + ".in"));
+			long out = Long.valueOf(
+					Files.readAllLines(Paths.get("src/main/java/finbarre/slonie/dane/" + fileName + ".out")).get(0));
+			Slonie slonie = new Slonie();
+			long wynik = slonie.policz(in);
+			assertThat(wynik).isEqualTo(out);
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Test
+	public void slo3ocen() {
+		String fileName = "slo3ocen";
+		try {
+			List<String> in = Files.readAllLines(Paths.get("src/main/java/finbarre/slonie/dane/" + fileName + ".in"));
+			long out = Long.valueOf(
+					Files.readAllLines(Paths.get("src/main/java/finbarre/slonie/dane/" + fileName + ".out")).get(0));
+			Slonie slonie = new Slonie();
+			long wynik = slonie.policz(in);
+			assertThat(wynik).isEqualTo(out);
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Test
+	public void slo4() {
+		String fileName = "slo4";
+		try {
+			List<String> in = Files.readAllLines(Paths.get("src/main/java/finbarre/slonie/dane/" + fileName + ".in"));
+			long out = Long.valueOf(
+					Files.readAllLines(Paths.get("src/main/java/finbarre/slonie/dane/" + fileName + ".out")).get(0));
+			Slonie slonie = new Slonie();
+			long wynik = slonie.policz(in);
+			assertThat(wynik).isEqualTo(out);
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Test
+	public void slo4ocen() {
+		String fileName = "slo4ocen";
+		try {
+			List<String> in = Files.readAllLines(Paths.get("src/main/java/finbarre/slonie/dane/" + fileName + ".in"));
+			long out = Long.valueOf(
+					Files.readAllLines(Paths.get("src/main/java/finbarre/slonie/dane/" + fileName + ".out")).get(0));
+			Slonie slonie = new Slonie();
+			long wynik = slonie.policz(in);
+			assertThat(wynik).isEqualTo(out);
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 //
 //	@Test
 //	public void slo5() {

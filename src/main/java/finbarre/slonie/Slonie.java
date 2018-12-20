@@ -4,17 +4,23 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.LongSummaryStatistics;
+import java.util.stream.Collectors;
 
 public class Slonie {
-
 
 	public long policz(List<String> in) {
 
 		String[] masyStr = in.get(1).split(" ");
 		long[] masy = Arrays.stream(masyStr).mapToLong(Long::parseLong).toArray();
 
-		long[] docelowe = Arrays.stream(in.get(2).split(" ")).mapToLong(Long::parseLong).toArray();
-		long[] aktualne = Arrays.stream(in.get(3).split(" ")).mapToLong(Long::parseLong).toArray();
+//		long[] docelowe = Arrays.stream(in.get(2).split(" ")).mapToLong(Long::parseLong).toArray();
+//		long[] aktualne = Arrays.stream(in.get(3).split(" ")).mapToLong(Long::parseLong).toArray();
+		List<Long> docelowe = Arrays.asList(in.get(2).split(" ")).stream().map(s -> Long.parseLong(s.trim()))
+				.collect(Collectors.toList());
+		List<Long> aktualne = Arrays.asList(in.get(3).split(" ")).stream().map(s -> Long.parseLong(s.trim()))
+				.collect(Collectors.toList());
+
+		
 		long wynik = 0;
 		List<List<Long>> cykle = new ArrayList<>();
 		List<Long> uzyte = new ArrayList<>();
@@ -25,34 +31,45 @@ public class Slonie {
 		long metoda1 = 0;
 		long metoda2 = 0;
 
-		for (long i = 0; i < aktualne.length; i++) {
+		while (aktualne.size() > 0) {
 			List<Long> cykl = new ArrayList<>();
 			boolean pierwszy = true;
 			boolean koniecCyklu = false;
-			long szukajWDocelowych = 0;
-			if (docelowe[(int) i] != aktualne[(int) i] && !uzyte.contains(aktualne[(int) i])) {
-				if (pierwszy) {
-					uzyte.add(aktualne[(int) i]);
-					cykl.add(aktualne[(int) i]);
+			long szukaj = 0;
+			long pierwszyWCyklu = 0;
+			long znalezione = 0;
+			long r1=aktualne.get(0);
+			long r2=docelowe.get(0);
+			if (r1 == r2) {
+				aktualne.remove(0);
+				docelowe.remove(0);
+				pierwszy = false;
+				koniecCyklu = true;
+			}
+			if (pierwszy) {
+				pierwszyWCyklu = r1;
+				cykl.add(r1);
+				szukaj = r2;
+				pierwszy = false;
+				aktualne.remove(0);
+				docelowe.remove(0);
+			}
 
-					pierwszy = false;
-					szukajWDocelowych = docelowe[(int) i];
+			while (!koniecCyklu) {
+				cykl.add(szukaj);
+				znalezione = szukaj;
+				try {
+					int indexOf = aktualne.indexOf(szukaj);
+					szukaj = docelowe.get(indexOf);
+					aktualne.remove(indexOf);
+					docelowe.remove(indexOf);
 				}
-
-				while (!koniecCyklu) {
-					for (int j = 0; j < aktualne.length; j++) {
-						if (szukajWDocelowych == aktualne[j]) {
-							cykl.add(aktualne[j]);
-							uzyte.add(aktualne[j]);
-							szukajWDocelowych = docelowe[j];
-							if (szukajWDocelowych == aktualne[(int) i]) {
-								koniecCyklu = true;
-								cykle.add(cykl);
-								cykl = null;
-								break;
-							}
-						}
-					}
+				catch (Exception e) {
+					// TODO: handle exception
+				}
+				if (szukaj == pierwszyWCyklu) {
+					koniecCyklu = true;
+					cykle.add(cykl);
 				}
 			}
 
@@ -61,14 +78,16 @@ public class Slonie {
 		for (List<Long> cykl : cykle) {
 			sumaMasSloni = 0;
 			najmniejszySlonWCyklu = 1000000000;
+			int wielkoscCyklu=cykl.size();
 			for (long i : cykl) {
-				sumaMasSloni = sumaMasSloni + masy[(int) (i - 1)];
-				if (masy[(int) (i - 1)] < najmniejszySlonWCyklu)
-					najmniejszySlonWCyklu = masy[(int) (i - 1)];
+				long masa=masy[(int) (i - 1)];
+				sumaMasSloni = sumaMasSloni + masa;
+				if (masa < najmniejszySlonWCyklu)
+					najmniejszySlonWCyklu = masa;
 
 			}
-			metoda1 = sumaMasSloni + ((cykl.size() - 2) * najmniejszySlonWCyklu);
-			metoda2 = sumaMasSloni + najmniejszySlonWCyklu + ((cykl.size() + 1) * najmniejszySlonWOgole);
+			metoda1 = sumaMasSloni + ((wielkoscCyklu - 2) * najmniejszySlonWCyklu);
+			metoda2 = sumaMasSloni + najmniejszySlonWCyklu + ((wielkoscCyklu + 1) * najmniejszySlonWOgole);
 			wynik = wynik + Math.min(metoda1, metoda2);
 		}
 		return wynik;
