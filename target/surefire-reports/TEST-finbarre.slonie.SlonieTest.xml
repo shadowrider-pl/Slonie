@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="2" failures="0" name="finbarre.slonie.SlonieTest" time="0.084" errors="0" skipped="0">
+<testsuite tests="9" failures="0" name="finbarre.slonie.SlonieTest" time="138.053" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
@@ -32,7 +32,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="52.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="os.version" value="4.15.0-42-generic"/>
+    <property name="os.version" value="4.15.0-43-generic"/>
     <property name="library.jansi.path" value="/usr/share/maven/lib/jansi-native"/>
     <property name="user.home" value="/home/norbert"/>
     <property name="user.timezone" value="Europe/Warsaw"/>
@@ -61,6 +61,13 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="finbarre.slonie.SlonieTest" name="slo0" time="0.083"/>
-  <testcase classname="finbarre.slonie.SlonieTest" name="slo1" time="0.001"/>
+  <testcase classname="finbarre.slonie.SlonieTest" name="slo0" time="0.094"/>
+  <testcase classname="finbarre.slonie.SlonieTest" name="slo1ocen" time="0.001"/>
+  <testcase classname="finbarre.slonie.SlonieTest" name="slo1" time="0"/>
+  <testcase classname="finbarre.slonie.SlonieTest" name="slo2" time="0.002"/>
+  <testcase classname="finbarre.slonie.SlonieTest" name="slo2ocen" time="0"/>
+  <testcase classname="finbarre.slonie.SlonieTest" name="slo3" time="0.007"/>
+  <testcase classname="finbarre.slonie.SlonieTest" name="slo3ocen" time="0.001"/>
+  <testcase classname="finbarre.slonie.SlonieTest" name="slo4" time="0.043"/>
+  <testcase classname="finbarre.slonie.SlonieTest" name="slo4ocen" time="137.905"/>
 </testsuite>

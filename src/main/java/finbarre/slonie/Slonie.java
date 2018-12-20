@@ -13,8 +13,6 @@ public class Slonie {
 		String[] masyStr = in.get(1).split(" ");
 		long[] masy = Arrays.stream(masyStr).mapToLong(Long::parseLong).toArray();
 
-//		long[] docelowe = Arrays.stream(in.get(2).split(" ")).mapToLong(Long::parseLong).toArray();
-//		long[] aktualne = Arrays.stream(in.get(3).split(" ")).mapToLong(Long::parseLong).toArray();
 		List<Long> docelowe = Arrays.asList(in.get(2).split(" ")).stream().map(s -> Long.parseLong(s.trim()))
 				.collect(Collectors.toList());
 		List<Long> aktualne = Arrays.asList(in.get(3).split(" ")).stream().map(s -> Long.parseLong(s.trim()))
